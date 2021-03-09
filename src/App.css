@@ -1,3 +1,10 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+
+.titleText {
   text-align: center;
+}
+
+.App {
+  font-family: 'DotGothic16', sans-serif;
 }

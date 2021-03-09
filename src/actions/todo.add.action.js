@@ -24,7 +24,7 @@ export const addTodoRequest = () => {
     };
   };
   
-  export const addTodo = (newTodos) => {
+  export const addTodo = (newTodos,setNewTodos) => {
     return function (dispatch) {
       dispatch(addTodoRequest());
   
@@ -32,5 +32,6 @@ export const addTodoRequest = () => {
         .post("https://603cd864f4333a0017b68722.mockapi.io/todos", {name: newTodos})
         .then((result) => dispatch(addTodoSuccess(result.data)))
         .catch((error) => dispatch(addTodoError(error)));
+        setNewTodos("")
     };
   };
