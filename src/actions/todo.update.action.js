@@ -28,7 +28,9 @@ export const updateTodoRequest = () => {
     return function (dispatch) {
         const dataUpdate = prompt("insert new todos here")
         dispatch(updateTodoRequest());
-  
+        if (dataUpdate === null) {
+          return;
+        }
         axios
         .put(`https://603cd864f4333a0017b68722.mockapi.io/todos/${item.id}`, {name: dataUpdate})
         .then(result =>{
